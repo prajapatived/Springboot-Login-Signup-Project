@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>login</title>
+	<style>
+	.test p{
+		color: aqua;
+		text-align: end;
+		border: 5px solid red;
+	}
+</style>
+</head>
+
+
+<body>
+	<section class="container">
+
+		<h1 class="text-center">User Login Page</h1>
+		<div class="container">
+			<div class="col-md-20 col-md-offset-3 ">
+
+				<form th:action="@{/userLogin}" method="post">
+					<div th:if="${param.error}">
+						<div class="alert alert-danger">
+							Invalid username or password
+						</div>
+					</div>
+					<div th:if="${param.logout}">
+						<div class="alert alert-info">
+							You've been logged out
+						</div>
+					</div>
+
+					<div class="form-group m-2">
+						<label for="username">Username: </label>
+						<input type="text" class="form-control" id="username" name="username"
+							placeholder="Enter Email Id" autofocus="autofocus">
+					</div>
+					<div class="form-group m-2">
+						<label for="password">Password: </label>
+						<input type="password" class="form-control" id="password" name="password"
+							placeholder="Enter Password" />
+					</div>
+
+					<div class="col-sm-10 col-sm-offset-3 ">
+						<input type="submit" name="login-submit" id="login-submit"
+							class="form-control btn btn-primary " value="Log In">
+					</div>
+
+		<div class="test"><p>hello</p></div>
+
+				</form>
+
+				<div class="form-group">
+					<span>New User? <a th:href="@{/register}">Register here</a></span>
+				</div>
+			</div>
+
+
+
+		</div>
+	</section>
+</body>
+
+</html>

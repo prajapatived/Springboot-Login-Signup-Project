@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.thymeleaf.org" th:replace="userbase::layout(~{::section})">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>profile</title>
+</head>
+
+<body>
+	<section class="text-center">
+		<h1>Profile page</h1>
+		<h1>Welcome: [[${user.firstname}]]</h1>
+		<button class="btn btn-primary "><a class="text-white" href="/logout">Logout</a></button>
+	</section>
+</body>
+
+</html>
